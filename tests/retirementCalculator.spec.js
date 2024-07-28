@@ -3,6 +3,7 @@ const readJsonData = require('../utils/readJsonData');
 
 const RetirementCalculatorPage = require('../pages/RetirementCalculatorPage');
 
+//User should be able to submit form with all required fields filled in
 test('retirement Calculator Test @TestCase1', async ({ page ,baseURL}) => {
   const retirementCalculator = new RetirementCalculatorPage(page);
   
@@ -33,7 +34,7 @@ expect(await retirementCalculator.verifyErrorRetirementAge()).toBe(errorMessage)
 
 });
 
-//validate Social security toggle button- 'Yes' and 'No'
+//Additional Social Security fields should display/hide based on Social Security benefits toggle
 test('social Security benefits Toggle Button @TestCase2',async({page,baseURL})=>{
   const retirementCalculator = new RetirementCalculatorPage(page);
   await retirementCalculator.navigate(baseURL);
@@ -57,7 +58,7 @@ test('social Security benefits Toggle Button @TestCase2',async({page,baseURL})=>
   }
 });
 
-//update default calculator Test
+//User should be able to update default calculator values
 test('update defaultCalculator Testvalues @TestCase3',async({page,baseURL})=>{
   const retirementCalculator = new RetirementCalculatorPage(page);
 
