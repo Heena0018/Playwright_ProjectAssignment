@@ -19,13 +19,6 @@ test('retirement Calculator Test', async ({ page ,baseURL}) => {
     console.error('Failed to load test data.');
   }
 
- 
-
-  // Send the email
-  //await retirementCalculator.sendEmail('test@example.com');
-
-  // Solve the captcha
-  //await retirementCalculator.solveCaptcha();
 });
 
 //validate error message for blank Age Input
@@ -62,12 +55,9 @@ test('social Security benefits Toggle Button',async({page,baseURL})=>{
     expect(await validateSocialSecurityToggle).toBeTruthy();    
 
   }
-
-  
-  
 });
 
-//update default calculator
+//update default calculator Test
 test('update defaultCalculator Testvalues',async({page,baseURL})=>{
   const retirementCalculator = new RetirementCalculatorPage(page);
 
