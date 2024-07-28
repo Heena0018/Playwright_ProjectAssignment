@@ -1,0 +1,9 @@
+{  
+  "additionalOtherIncome": 600,
+  "yearsRetirementNeedsToLast": 25,
+  "postRetirementIncomeIncreaseWithInflation": "Yes",
+  "expectedInflationRate":"10%",
+  "percentFinalAnnualIncomeDesired": "78%",
+  "preRetirementInvestmentReturn": "8%",
+  "postRetirementInvestmentReturn": "6%"
+}
