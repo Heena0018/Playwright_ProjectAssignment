@@ -82,7 +82,9 @@ class RetirementCalculatorPage extends BasePage {
     try {
       await this.currentAgeInput.fill("");
       await this.calculateButton.click();
+      await this.page.screenshot({path:'currentAgeBlankfield.png',fullPage:true})
       return await this.currentAgeInputError.textContent();
+      
 
     } catch (error) {
       console.error("Error during input clearing or button click:", error);
@@ -96,6 +98,7 @@ class RetirementCalculatorPage extends BasePage {
       await this.currentAgeInput.fill("");
       await this.retirementAgeInput.fill("");
       await this.calculateButton.click();
+      await this.page.screenshot({path:'retirementAgeBlankfield.png',fullPage:true})
       return await this.retirementAgeInputError.textContent();
 
     } catch (error) {
@@ -127,6 +130,7 @@ class RetirementCalculatorPage extends BasePage {
 
     let isSocialSecurityOverrideVisible = await this.socialSecurityOverrideInput.isVisible();
     console.log(isSocialSecurityOverrideVisible)
+    await this.page.screenshot({path:'SocialSecurityTogglefield.png',fullPage:true})
 
     if( isMarriedButtonVisible && isSigleButtonVisible && isSocialSecurityOverrideVisible){
       return true;
@@ -150,6 +154,7 @@ async updateDefaultCalculator(data){
     await this.finalAnnualIncomeInput.fill(data.percentFinalAnnualIncomeDesired)
     await this.preRetirementInvestmentInput.fill(data.preRetirementInvestmentReturn);
     await this.postRetirementInvestmentInput.fill(data.postRetirementInvestmentReturn);
+    await this.page.screenshot({path:'updateDefaultCalculatorfield.png',fullPage:true})
     await this.saveChangesButton.click();
   }
 
@@ -166,6 +171,7 @@ async updateDefaultCalculator(data){
 async updateOtherIncome(data)  {
   await this.adjustDefaultsButton.click();
   await this.otherIncomeInput.fill(data.updatedAdditionalOtherIncome.toString());
+  await this.page.screenshot({path:'updateIncomefield.png',fullPage:true})
   await this.saveChangesButton.click();
   return await this.otherIncomeInput.inputValue();
 

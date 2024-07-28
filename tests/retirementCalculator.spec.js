@@ -3,7 +3,7 @@ const readJsonData = require('../utils/readJsonData');
 
 const RetirementCalculatorPage = require('../pages/RetirementCalculatorPage');
 
-test('retirement Calculator Test', async ({ page ,baseURL}) => {
+test('retirement Calculator Test @TestCase1', async ({ page ,baseURL}) => {
   const retirementCalculator = new RetirementCalculatorPage(page);
   
   // Load test data from JSON file
@@ -22,7 +22,7 @@ test('retirement Calculator Test', async ({ page ,baseURL}) => {
 });
 
 //validate error message for blank Age Input
-test('validate error message for InputAge field',async({page,baseURL})=>{
+test('validate error message for InputAge field@TestCase4',async({page,baseURL})=>{
 const retirementCalculator = new RetirementCalculatorPage(page);
 await retirementCalculator.navigate(baseURL);
 
@@ -34,7 +34,7 @@ expect(await retirementCalculator.verifyErrorRetirementAge()).toBe(errorMessage)
 });
 
 //validate Social security toggle button- 'Yes' and 'No'
-test('social Security benefits Toggle Button',async({page,baseURL})=>{
+test('social Security benefits Toggle Button @TestCase2',async({page,baseURL})=>{
   const retirementCalculator = new RetirementCalculatorPage(page);
   await retirementCalculator.navigate(baseURL);
   
@@ -58,7 +58,7 @@ test('social Security benefits Toggle Button',async({page,baseURL})=>{
 });
 
 //update default calculator Test
-test('update defaultCalculator Testvalues',async({page,baseURL})=>{
+test('update defaultCalculator Testvalues @TestCase3',async({page,baseURL})=>{
   const retirementCalculator = new RetirementCalculatorPage(page);
 
 
@@ -69,7 +69,8 @@ test('update defaultCalculator Testvalues',async({page,baseURL})=>{
    await retirementCalculator.navigate(baseURL);
 
    await retirementCalculator.updateDefaultCalculator(testData);
-  expect( await retirementCalculator.updateOtherIncome(testData)).toBe('$450')
+  expect( await retirementCalculator.updateOtherIncome(testData)).toBe('$450');
+  
 
 
 
