@@ -68,7 +68,9 @@ test('update defaultCalculator Testvalues',async({page,baseURL})=>{
    // Navigate to the page
    await retirementCalculator.navigate(baseURL);
 
-   await retirementCalculator.updateDefaultCalculator(testData)
+   await retirementCalculator.updateDefaultCalculator(testData);
+  expect( await retirementCalculator.updateOtherIncome(testData)).toBe('$450')
+
 
 
 })

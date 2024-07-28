@@ -163,7 +163,13 @@ async updateDefaultCalculator(data){
 }
 
 
-  
+async updateOtherIncome(data)  {
+  await this.adjustDefaultsButton.click();
+  await this.otherIncomeInput.fill(data.updatedAdditionalOtherIncome.toString());
+  await this.saveChangesButton.click();
+  return await this.otherIncomeInput.inputValue();
+
+}
   
 
   async sendEmail(email) {
